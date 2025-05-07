@@ -1,4 +1,0 @@
-repository "paint_group4/paint_group4@5773706544387@cloud"
-  path "/"
-    br "/main"
-    co "/main"
