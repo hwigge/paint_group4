@@ -17710,7 +17710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: 8af077b985b6ac642a9432bf239a5303, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.06
+      value: -4.74
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: 8af077b985b6ac642a9432bf239a5303, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17718,7 +17718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: 8af077b985b6ac642a9432bf239a5303, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.36
+      value: -4.712
       objectReference: {fileID: 0}
     - target: {fileID: 7516989854395125638, guid: 8af077b985b6ac642a9432bf239a5303, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20386,7 +20386,7 @@ Transform:
   m_GameObject: {fileID: 1530972497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.08, z: 0}
+  m_LocalPosition: {x: -3.39, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20441,7 +20441,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 0.3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
