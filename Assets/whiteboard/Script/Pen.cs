@@ -48,7 +48,7 @@ public class WhiteboardMarker : MonoBehaviour
         else { Debug.LogWarning("SetPen Size called, but render is still null"); }
     }
     private void Draw() {
-        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight)) {
+        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight/5f)) {
             if (_touch.transform.CompareTag("Whiteboard")) {
                 if (_whiteBoard == null) {
                     _whiteBoard = _touch.transform.GetComponent<WhiteBoard>();
