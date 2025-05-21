@@ -18,30 +18,20 @@ public class WhiteboardMarker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
-    void Awake()
-    {
-        // Initialize _renderer as early as possible
-        if (_tip == null)
+    private void Awake() {
+        if (_tip == null) 
         {
-            Debug.LogError("WhiteboardMarker: Tip is not assigned in the Inspector!");
             return;
         }
-
         _renderer = _tip.GetComponent<Renderer>();
-        if (_renderer == null)
-        {
-            Debug.LogError("WhiteboardMarker: No Renderer found on tip object.");
-            return;
-        }
-
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
     }
-
     void Start() {
-        // _renderer = _tip.GetComponent<Renderer>();
+        //_renderer = _tip.GetComponent<Renderer>();
         //_colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
-        // _tipHeight = _tip.localScale.y;
+        //_tipHeight = _tip.localScale.y;
+        Debug.Log("Start");
     }
 
     // Update is called once per frame
@@ -49,22 +39,16 @@ public class WhiteboardMarker : MonoBehaviour
         Draw();
     }
 
-    public void SetPenSize(float newSize)
-    {
+    public void SetPenSize(float newSize) {
         _penSize = Mathf.RoundToInt(newSize);
-        if (_renderer != null)
+        if(_renderer != null) 
         {
             _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         }
-        else
-        {
-            Debug.LogWarning("SetPenSize called, but _renderer is still null!");
-        }
+        else { Debug.LogWarning("SetPen Size called, but render is still null"); }
     }
-
-
     private void Draw() {
-        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight)) { //reduce height by _tipHeightt/2f
+        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight)) {
             if (_touch.transform.CompareTag("Whiteboard")) {
                 if (_whiteBoard == null) {
                     _whiteBoard = _touch.transform.GetComponent<WhiteBoard>();
