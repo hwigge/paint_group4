@@ -18,10 +18,20 @@ public class WhiteboardMarker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
-    void Start() {
+    private void Awake() {
+        if (_tip == null) 
+        {
+            return;
+        }
         _renderer = _tip.GetComponent<Renderer>();
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
+    }
+    void Start() {
+        //_renderer = _tip.GetComponent<Renderer>();
+        //_colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
+        //_tipHeight = _tip.localScale.y;
+        Debug.Log("Start");
     }
 
     // Update is called once per frame
@@ -29,6 +39,14 @@ public class WhiteboardMarker : MonoBehaviour
         Draw();
     }
 
+    public void SetPenSize(float newSize) {
+        _penSize = Mathf.RoundToInt(newSize);
+        if(_renderer != null) 
+        {
+            _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
+        }
+        else { Debug.LogWarning("SetPen Size called, but render is still null"); }
+    }
     private void Draw() {
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight)) {
             if (_touch.transform.CompareTag("Whiteboard")) {
