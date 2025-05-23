@@ -5,33 +5,35 @@ public class WhiteboardLoader : MonoBehaviour
 {
     void Start()
     {
-        string fileName = PlayerPrefs.GetString("SavedWhiteboard", null);
-
+        string fileName = PlayerPrefs.GetString("SavedWhiteboard", "");
         if (!string.IsNullOrEmpty(fileName))
         {
-            string path = Path.Combine(Application.persistentDataPath, fileName);
+            // FIX: load from the same Screenshots folder we saved to
+            string path = Path.Combine(Application.dataPath, "../Screenshots", fileName);
 
             if (File.Exists(path))
             {
-                byte[] pngData = File.ReadAllBytes(path);
-                Texture2D tex = new Texture2D(2, 2);
-                tex.LoadImage(pngData);
+                byte[] bytes = File.ReadAllBytes(path);
+                Texture2D texture = new Texture2D(2, 2);
+                texture.LoadImage(bytes);
+                texture.Apply();
 
-                // Apply texture directly to this object's material (your canvas cube)
-                Renderer r = GetComponent<Renderer>();
-                r.material = new Material(Shader.Find("Unlit/Texture"));
-                r.material.mainTexture = tex;
+                Renderer renderer = GetComponent<Renderer>();
 
-                // Make it grabbable
-                /* if (!GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>())
-                {
-                    gameObject.AddComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>();
-                } */
+                Material mat = new Material(Shader.Find("Unlit/Texture")); // so it doesn’t get dark
+                mat.mainTexture = texture;
+                renderer.material = mat;
 
-                Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-                rb.useGravity = false;
-                rb.isKinematic = false;
+                Debug.Log("Loaded whiteboard texture: " + path);
             }
+            else
+            {
+                Debug.LogWarning("Saved whiteboard file not found at: " + path);
+            }
+        }
+        else
+        {
+            Debug.Log("No whiteboard image filename found in PlayerPrefs.");
         }
     }
 }
