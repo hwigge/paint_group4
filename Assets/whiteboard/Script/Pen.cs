@@ -18,6 +18,9 @@ public class WhiteboardMarker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
+    private bool isEraser = false;
+    private Color _penColor;
+
     private void Awake() {
         if (_tip == null) 
         {
@@ -47,6 +50,23 @@ public class WhiteboardMarker : MonoBehaviour
         }
         else { Debug.LogWarning("SetPen Size called, but render is still null"); }
     }
+
+    public void SetEraserMode(bool active)
+    {
+        isEraser = active;
+        UpdateColorArray();
+
+        // Optionally, change the tip color to visually reflect eraser mode
+        if (_renderer != null)
+            _renderer.material.color = isEraser ? Color.white : _penColor;
+    }
+
+    private void UpdateColorArray()
+    {
+        Color currentColor = isEraser ? Color.white : _penColor;
+        _colors = Enumerable.Repeat(currentColor, _penSize * _penSize).ToArray();
+    }
+
     private void Draw() {
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight/5f)) {
             if (_touch.transform.CompareTag("Whiteboard")) {
