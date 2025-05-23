@@ -24,7 +24,7 @@ public class WhiteBoard : MonoBehaviour
     // Custom save method — saves to project-root/Screenshots/
     public void SaveWhiteboardToProjectScreenshots(string fileName)
     {
-        string screenshotsPath = Path.Combine(Application.dataPath, "../Screenshots");
+        string screenshotsPath = Path.Combine(Application.dataPath, "whiteboard/screenshots");
         if (!Directory.Exists(screenshotsPath))
             Directory.CreateDirectory(screenshotsPath);
 
