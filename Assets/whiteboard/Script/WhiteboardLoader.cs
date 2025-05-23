@@ -9,7 +9,8 @@ public class WhiteboardLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(fileName))
         {
             // FIX: load from the same Screenshots folder we saved to
-            string path = Path.Combine(Application.dataPath, "whiteboard/screenshots", fileName);
+            string path = Path.Combine(Application.dataPath, "whiteboard/s" +
+                "creenshots", fileName);
 
             if (File.Exists(path))
             {

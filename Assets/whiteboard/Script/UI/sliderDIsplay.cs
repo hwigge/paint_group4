@@ -25,4 +25,5 @@ public class sliderDIsplay : MonoBehaviour
         Debug.Log("Pen size set to: " + value);
         marker.SetPenSize(value);
     }
+
 }
