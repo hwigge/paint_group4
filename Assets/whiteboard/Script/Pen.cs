@@ -9,7 +9,7 @@ public class WhiteboardMarker : MonoBehaviour
     [SerializeField] private int _penSize = 5;
 
     private Renderer _renderer;
-    private Color[] _colors;
+    public Color[] _colors;
     private float _tipHeight;
 
     private RaycastHit _touch;
