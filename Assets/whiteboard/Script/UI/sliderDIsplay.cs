@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// this change the tip size and displayes the value in the canvas.
+
 public class sliderDIsplay : MonoBehaviour
 {
     [SerializeField] private Slider slider;
