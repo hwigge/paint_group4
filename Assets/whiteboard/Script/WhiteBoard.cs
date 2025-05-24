@@ -1,16 +1,31 @@
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class WhiteBoard : MonoBehaviour
 {
     public Texture2D texture;
     public Vector2 textureSize = new Vector2(2048, 2048);
+    public Color clearColor = Color.white;
+
+    private Color[] _clearColors;
 
     void Start()
     {
         var r = GetComponent<Renderer>();
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
+
+        // FIll the whiteboard with the clear color initially.
+        var clearColors = Enumerable.Repeat(clearColor, (int)(textureSize.x * textureSize.y)).ToArray();
+        texture.SetPixels(clearColors);
+        texture.Apply();
+
         r.material.mainTexture = texture;
+    }
+
+    public Color[] GetClearColors(int size)
+    {
+        return Enumerable.Repeat(clearColor, size * size).ToArray();
     }
 
     // Default save method (to persistent data path, if needed elsewhere)

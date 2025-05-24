@@ -9,7 +9,7 @@ public class WhiteboardMarker : MonoBehaviour
     [SerializeField] private int _penSize = 5;
 
     private Renderer _renderer;
-    public Color[] _colors;
+    private Color[] _colors;
     private float _tipHeight;
 
     private RaycastHit _touch;
@@ -18,8 +18,8 @@ public class WhiteboardMarker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
-    private bool isEraser = false;
-    private Color _penColor;
+    [Header("Tool Mode")]
+    public bool isEraser = false;
 
     private void Awake() {
         if (_tip == null) 
@@ -30,43 +30,32 @@ public class WhiteboardMarker : MonoBehaviour
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
     }
-    void Start() {
-        //_renderer = _tip.GetComponent<Renderer>();
-        //_colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
-        //_tipHeight = _tip.localScale.y;
-        Debug.Log("Start");
-    }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update() {
         Draw();
     }
 
+    //Set Pen tip size. 
     public void SetPenSize(float newSize) {
         _penSize = Mathf.RoundToInt(newSize);
-        if(_renderer != null) 
+        SetupColors();
+    }
+
+    // change color of tip to background if eraser else use normal color.
+    private void SetupColors()
+    {
+        if (isEraser && _whiteBoard != null)
+        {
+            _colors = _whiteBoard.GetClearColors(_penSize);
+        }
+        else if (!isEraser)
         {
             _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         }
-        else { Debug.LogWarning("SetPen Size called, but render is still null"); }
     }
 
-    public void SetEraserMode(bool active)
-    {
-        isEraser = active;
-        UpdateColorArray();
-
-        // Optionally, change the tip color to visually reflect eraser mode
-        if (_renderer != null)
-            _renderer.material.color = isEraser ? Color.white : _penColor;
-    }
-
-    private void UpdateColorArray()
-    {
-        Color currentColor = isEraser ? Color.white : _penColor;
-        _colors = Enumerable.Repeat(currentColor, _penSize * _penSize).ToArray();
-    }
-
+    //Actual drawing logic here.
     private void Draw() {
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight/5f)) {
             if (_touch.transform.CompareTag("Whiteboard")) {
@@ -105,4 +94,33 @@ public class WhiteboardMarker : MonoBehaviour
         _touchedLastFrame = false;
 
     }
+
+    //Setting Tip color
+    public void SetColor(Color newColor)
+    {
+        if (_renderer != null)
+        {
+            _renderer.material.color = newColor;
+
+            // Only update colors if not in eraser mode
+            if (!isEraser)
+            {
+                _colors = Enumerable.Repeat(newColor, _penSize * _penSize).ToArray();
+            }
+        }
+    }
+
+    // ask what solor pen is using.
+    public bool TryGetColor(out Color currentColor)
+    {
+        if (_renderer != null)
+        {
+            currentColor = _renderer.material.color;
+            return true;
+        }
+
+        currentColor = Color.black;
+        return false;
+    }
+
 }

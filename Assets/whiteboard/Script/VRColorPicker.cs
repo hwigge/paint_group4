@@ -16,14 +16,21 @@ public class VRColorPicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Color initialColor = Color.black;
+        redSlider.value = initialColor.r;
+        greenSlider.value = initialColor.g;
+        blueSlider.value = initialColor.b;
 
+        //to change color as soon as slider is moved.
+        redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
+        greenSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
+        blueSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
+
+        // Set initial color
+        UpdateColor();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     public void UpdateColor()
     {
@@ -36,14 +43,16 @@ public class VRColorPicker : MonoBehaviour
         previewImage.color = selectedColor;
         if (targetPen != null && selectedColor != null)
         {
-            int size = targetPen._colors.Length;
-            for (int i = 0; i < size; i++)
-            {
-                targetPen._colors[i] = selectedColor;
-            }
+            //int size = targetPen._colors.Length;
+            //for (int i = 0; i < size; i++)
+            //{
+            //    targetPen._colors[i] = selectedColor;
+            //}
 
+            targetPen.SetColor(selectedColor);
 
 
         }
     }
+    
 }
