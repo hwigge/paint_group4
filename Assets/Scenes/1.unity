@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028373, g: 0.22571398, b: 0.30692294, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2688,7 +2688,6 @@ GameObject:
   - component: {fileID: 76226246}
   - component: {fileID: 76226249}
   - component: {fileID: 76226248}
-  - component: {fileID: 76226247}
   m_Layer: 5
   m_Name: value_Eraser
   m_TagString: Untagged
@@ -2715,25 +2714,6 @@ RectTransform:
   m_AnchoredPosition: {x: 94.5, y: -71.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &76226247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76226245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da1752b413b96f448322000d707ab7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 0}
-  slider: {fileID: 1830358926}
-  valueText: {fileID: 76226248}
-  marker: {fileID: 1669252884}
-  eraserSlider: {fileID: 0}
-  eraserValueText: {fileID: 0}
-  eraserMarker: {fileID: 0}
 --- !u!114 &76226248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2957,75 +2937,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.009029879, y: -0.064930744, z: -0.06743039}
     m_Extent: {x: 0.0043483684, y: 0.0068749115, z: 0.006839171}
   m_DirtyAABB: 0
---- !u!1001 &78510924
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 134676, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_Name
-      value: WaterPlane
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 21.995623
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 17.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 211.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -16.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99998534
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.005419094
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.621
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
 --- !u!1 &79451427
 GameObject:
   m_ObjectHideFlags: 0
@@ -15025,7 +14936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da1752b413b96f448322000d707ab7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 0}
+  uiCanvas: {fileID: 47817080}
   slider: {fileID: 1907492561}
   valueText: {fileID: 416496915}
   marker: {fileID: 1669252884}
@@ -16255,7 +16166,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 946937157}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -21025,12 +20936,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 47817080}
-  slider: {fileID: 0}
-  valueText: {fileID: 0}
-  marker: {fileID: 0}
-  eraserSlider: {fileID: 0}
-  eraserValueText: {fileID: 0}
-  eraserMarker: {fileID: 0}
+  slider: {fileID: 1907492561}
+  valueText: {fileID: 416496915}
+  marker: {fileID: 1669252884}
+  eraserSlider: {fileID: 1830358926}
+  eraserValueText: {fileID: 76226248}
+  eraserMarker: {fileID: 1851349511}
 --- !u!4 &600705593
 Transform:
   m_ObjectHideFlags: 0
@@ -26905,6 +26816,7 @@ GameObject:
   - component: {fileID: 759160975}
   - component: {fileID: 759160974}
   - component: {fileID: 759160973}
+  - component: {fileID: 759160978}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -26927,7 +26839,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759160970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -26992,7 +26904,7 @@ RectTransform:
   m_GameObject: {fileID: 759160970}
   m_LocalRotation: {x: 0.07192967, y: 0.89930975, z: -0.04771553, w: 0.42870894}
   m_LocalPosition: {x: 0, y: 0, z: -160.135}
-  m_LocalScale: {x: 0.01, y: 0.011, z: 0.02}
+  m_LocalScale: {x: 0.003463075, y: 0.004516204, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1371784399}
@@ -27003,6 +26915,25 @@ RectTransform:
   m_AnchoredPosition: {x: -73.88004, y: -335.91498}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &759160978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759160970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  pointer: {fileID: 0}
+  sortOrder: 0
 --- !u!1 &759894982
 GameObject:
   m_ObjectHideFlags: 0
@@ -37055,7 +36986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redSlider: {fileID: 445821084}
-  greenSlider: {fileID: 0}
+  greenSlider: {fileID: 1089070645}
   blueSlider: {fileID: 1618674910}
   previewImage: {fileID: 1034514056}
   targetPen: {fileID: 1669252884}
@@ -57751,7 +57682,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 148181079}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -59626,6 +59557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tip: {fileID: 1357031520}
   _penSize: 5
+  _colors: []
   isEraser: 0
 --- !u!136 &1669252885
 CapsuleCollider:
@@ -66470,6 +66402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tip: {fileID: 1929694292}
   _penSize: 5
+  _colors: []
   isEraser: 0
 --- !u!136 &1851349512
 CapsuleCollider:
@@ -77911,7 +77844,6 @@ SceneRoots:
   - {fileID: 1851349516}
   - {fileID: 2088745111}
   - {fileID: 1346826246}
-  - {fileID: 78510924}
   - {fileID: 767510728}
   - {fileID: 1957296554}
   - {fileID: 47817084}

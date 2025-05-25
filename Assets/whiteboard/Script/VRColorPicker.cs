@@ -22,10 +22,10 @@ public class VRColorPicker : MonoBehaviour
         blueSlider.value = initialColor.b;
 
         //to change color as soon as slider is moved.
-        redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
+      /*   redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
         greenSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
         blueSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
-
+ */
         // Set initial color
         UpdateColor();
     }
@@ -41,18 +41,19 @@ public class VRColorPicker : MonoBehaviour
             );
 
         previewImage.color = selectedColor;
-        if (targetPen != null && selectedColor != null)
+       /*  if (targetPen != null && selectedColor != null)
         {
-            //int size = targetPen._colors.Length;
-            //for (int i = 0; i < size; i++)
-            //{
-            //    targetPen._colors[i] = selectedColor;
-            //}
+            int size = targetPen._colors.Length;
+            for (int i = 0; i < size; i++)
+            {
+                targetPen._colors[i] = selectedColor;
+            } */
 
             targetPen.SetColor(selectedColor);
+            //targetPen._colors = selectedColor;
 
 
         }
     }
     
-}
+

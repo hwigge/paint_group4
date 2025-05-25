@@ -9,7 +9,7 @@ public class WhiteboardMarker : MonoBehaviour
     [SerializeField] private int _penSize = 5;
 
     private Renderer _renderer;
-    private Color[] _colors;
+    public Color[] _colors;
     private float _tipHeight;
 
     private RaycastHit _touch;
@@ -27,6 +27,7 @@ public class WhiteboardMarker : MonoBehaviour
             return;
         }
         _renderer = _tip.GetComponent<Renderer>();
+       
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
     }
