@@ -23220,8 +23220,8 @@ MonoBehaviour:
   _globalWindSpeed: 20
   _globalWindDirectionAngle: 50
   _globalWindTurbulence: 0.145
-  _viewpoint: {fileID: 742005184}
-  _camera: {fileID: 742005185}
+  _viewpoint: {fileID: 0}
+  _camera: {fileID: 0}
   _teleportThreshold: 10
   _timeProvider: {fileID: 0}
   _primaryLight: {fileID: 1725065160}
@@ -53128,7 +53128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 0.1
+  Acceleration: 0.2
   Damping: 0.3
   BackAndSideDampen: 0.5
   JumpForce: 0.3
@@ -53651,7 +53651,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.8e-43, y: 1.61e-43, z: 0, w: -9.119572e-39}
+  m_BoundingSphereOverride: {x: 6e-44, y: NaN, z: NaN, w: 8.3e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
