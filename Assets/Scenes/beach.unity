@@ -21494,7 +21494,7 @@ Transform:
   m_GameObject: {fileID: 658667748}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5333834, y: -0.46627298, z: -0.5119859, w: 0.48575935}
-  m_LocalPosition: {x: 746.1655, y: 160.6493, z: 0.4605}
+  m_LocalPosition: {x: 746.1719, y: 160.7157, z: 0.4599}
   m_LocalScale: {x: 0.01512711, y: 0.020822223, z: 0.01087959}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23220,13 +23220,13 @@ MonoBehaviour:
   _globalWindSpeed: 20
   _globalWindDirectionAngle: 50
   _globalWindTurbulence: 0.145
-  _viewpoint: {fileID: 0}
-  _camera: {fileID: 0}
+  _viewpoint: {fileID: 742005184}
+  _camera: {fileID: 742005185}
   _teleportThreshold: 10
   _timeProvider: {fileID: 0}
   _primaryLight: {fileID: 1725065160}
   _searchForPrimaryLightOnStartup: 1
-  _material: {fileID: 2100000, guid: ef94c26e44a36e24a9dcbc5995a2bed1, type: 2}
+  _material: {fileID: 2100000, guid: 9def92ac79181fe41b238e91663f0fad, type: 2}
   _waterTilePrefab: {fileID: 0}
   _layerName: 
   _layer: 4
@@ -42503,7 +42503,7 @@ Transform:
   m_GameObject: {fileID: 1329795408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 746.31, y: 159.97, z: 0}
+  m_LocalPosition: {x: 746.31, y: 160.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53612,8 +53612,8 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
+    m_Type: 0
+    m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -53651,7 +53651,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6e-44, y: NaN, z: NaN, w: 8.3e-44}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 1.47e-43, z: 1.1585e-41, w: -2.9394246e-36}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -53665,7 +53665,7 @@ Transform:
   m_GameObject: {fileID: 1725065159}
   serializedVersion: 2
   m_LocalRotation: {x: 0.29883623, y: 0.64085644, z: -0.29883623, w: 0.64085644}
-  m_LocalPosition: {x: 1109, y: 230, z: 321}
+  m_LocalPosition: {x: 757.851, y: 319.392, z: -21.402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54505,7 +54505,7 @@ Transform:
   m_GameObject: {fileID: 1753464054}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5333834, y: -0.46627298, z: -0.5119859, w: 0.48575935}
-  m_LocalPosition: {x: 746.1672, y: 160.6482, z: 0.3202}
+  m_LocalPosition: {x: 746.1756, y: 160.7391, z: 0.3201}
   m_LocalScale: {x: 0.01512711, y: 0.020822223, z: 0.01087959}
   m_ConstrainProportionsScale: 0
   m_Children:
