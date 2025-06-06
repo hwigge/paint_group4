@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1.unity
     guid: 16338951d704a094f808f23fe0a24c14
   - enabled: 1
     path: Assets/Scenes/beach.unity
     guid: 2bd7d4bbbdacd43c2bac240a01fe0274
+  - enabled: 0
+    path: Assets/crest/Assets/Crest/Crest-Examples/Main/Scenes/main.unity
+    guid: 831b08ead2995f8419a358cd5da15916
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 75d320975e3e56b428485956b930cf6c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b8692cdc298fd5542b765086eaecdfef, type: 2}
