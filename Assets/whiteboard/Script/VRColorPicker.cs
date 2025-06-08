@@ -1,6 +1,9 @@
+using Meta.XR.ImmersiveDebugger.UserInterface;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class VRColorPicker : MonoBehaviour
@@ -10,6 +13,7 @@ public class VRColorPicker : MonoBehaviour
     public Slider blueSlider;
     public Image previewImage;
     public WhiteboardMarker targetPen;
+    public TMP_Text RED, GREEN, BLUE;
     public int colorIndex = 0;
 
 
@@ -20,7 +24,7 @@ public class VRColorPicker : MonoBehaviour
         redSlider.value = initialColor.r;
         greenSlider.value = initialColor.g;
         blueSlider.value = initialColor.b;
-
+        UpdateValue(redSlider.value, greenSlider.value, blueSlider.value);
         //to change color as soon as slider is moved.
       /*   redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
         greenSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
@@ -29,7 +33,12 @@ public class VRColorPicker : MonoBehaviour
         // Set initial color
         UpdateColor();
     }
+    void UpdateValue(float r, float g, float b) {
+        RED.text = r.ToString("F2"); // Format to 2 decimal places
+        BLUE.text = b.ToString("F2"); // Format to 2 decimal places
+        GREEN.text = g.ToString("F2"); // Format to 2 decimal places
 
+    }
 
 
     public void UpdateColor()
