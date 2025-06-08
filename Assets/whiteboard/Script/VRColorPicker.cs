@@ -26,10 +26,9 @@ public class VRColorPicker : MonoBehaviour
         blueSlider.value = initialColor.b;
         UpdateValue(redSlider.value, greenSlider.value, blueSlider.value);
         //to change color as soon as slider is moved.
-      /*   redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
+        redSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
         greenSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
         blueSlider.onValueChanged.AddListener(delegate { UpdateColor(); });
- */
         // Set initial color
         UpdateColor();
     }
